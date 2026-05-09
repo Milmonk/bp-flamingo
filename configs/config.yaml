@@ -1,0 +1,94 @@
+# ============================================================================
+# BP-FLAMINGO: Main Configuration
+# ============================================================================
+# Central config file for all experiments.
+# Modify paths and parameters here — all modules read from this file.
+# ============================================================================
+
+# --- Project paths ---
+paths:
+  project_root: "."
+  data_dir: "data/multi30k"
+  models_dir: "models"
+  outputs_dir: "outputs"
+  captions_dir: "outputs/captions"
+  translations_dir: "outputs/translations"
+  metrics_dir: "outputs/metrics"
+  visualizations_dir: "outputs/visualizations"
+  logs_dir: "logs"
+
+# --- OpenFlamingo configuration ---
+openflamingo:
+  # Model variant — see: https://github.com/mlfoundations/open_flamingo
+  model_name: "openflamingo/OpenFlamingo-3B-vitl-mpt1b"
+  # Alternative larger models (require more GPU memory):
+  # model_name: "openflamingo/OpenFlamingo-9B-vitl-mpt7b"
+  
+  # Vision encoder
+  vision_encoder: "ViT-L-14"
+  vision_encoder_pretrained: "openai"
+  
+  # Generation parameters
+  generation:
+    max_new_tokens: 50
+    num_beams: 3
+    temperature: 1.0
+    top_k: 0
+    top_p: 0.9
+    repetition_penalty: 1.0
+  
+  # Few-shot settings
+  few_shot:
+    num_shots: 4      # number of in-context examples
+    seed: 42           # for reproducible example selection
+
+# --- MarianMT translation configuration ---
+translation:
+  # Model names for each language pair
+  models:
+    en_de: "Helsinki-NLP/opus-mt-en-de"
+    en_fr: "Helsinki-NLP/opus-mt-en-fr"
+  
+  # Generation parameters
+  generation:
+    max_length: 128
+    num_beams: 4
+
+# --- Dataset configuration ---
+dataset:
+  name: "multi30k"
+  languages: ["en", "de", "fr"]
+  splits: ["train", "val", "test"]
+  # Which split to use for few-shot examples
+  few_shot_split: "train"
+  # Which split to evaluate on
+  eval_split: "test"
+
+# --- Evaluation configuration ---
+evaluation:
+  metrics: ["bleu", "chrf", "meteor", "bertscore"]
+  
+  # BERTScore model per language
+  bertscore_models:
+    en: "roberta-large"
+    de: "bert-base-multilingual-cased"
+    fr: "bert-base-multilingual-cased"
+  
+  # Language detection threshold
+  lang_detect_threshold: 0.8
+
+# --- Experiment modes ---
+experiments:
+  modes:
+    - name: "en_only"
+      description: "OpenFlamingo generates English caption, evaluate against EN references"
+    - name: "direct_multilingual"
+      description: "OpenFlamingo generates caption directly in target language"
+      target_languages: ["de", "fr"]
+    - name: "translate_baseline"
+      description: "OpenFlamingo EN caption → MarianMT → target language"
+      target_languages: ["de", "fr"]
+
+# --- Reproducibility ---
+seed: 42
+deterministic: true
