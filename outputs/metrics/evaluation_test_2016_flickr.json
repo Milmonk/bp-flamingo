@@ -1,0 +1,454 @@
+{
+  "metadata": {
+    "split": "test_2016_flickr",
+    "num_experiments": 5,
+    "metrics_computed": [
+      "bleu",
+      "chrf",
+      "meteor",
+      "bertscore"
+    ],
+    "total_time_seconds": 26.11
+  },
+  "results": [
+    {
+      "experiment": "en_only",
+      "language": "en",
+      "num_samples": 1000,
+      "bleu": {
+        "score": 6.43,
+        "bp": 0.7564,
+        "precisions": [
+          43.09,
+          12.24,
+          4.66,
+          2.12
+        ]
+      },
+      "chrf": {
+        "score": 23.65
+      },
+      "meteor": {
+        "score": 27.69,
+        "std": 16.33,
+        "min": 0.0,
+        "max": 99.93
+      },
+      "bertscore": {
+        "precision": 92.26,
+        "recall": 90.45,
+        "f1": 91.33,
+        "model": "roberta-large"
+      },
+      "language_detection": {
+        "distribution": {
+          "en": {
+            "count": 945,
+            "percentage": 94.5
+          },
+          "tl": {
+            "count": 19,
+            "percentage": 1.9
+          },
+          "sv": {
+            "count": 8,
+            "percentage": 0.8
+          },
+          "af": {
+            "count": 6,
+            "percentage": 0.6
+          },
+          "cy": {
+            "count": 5,
+            "percentage": 0.5
+          },
+          "no": {
+            "count": 5,
+            "percentage": 0.5
+          },
+          "so": {
+            "count": 4,
+            "percentage": 0.4
+          },
+          "id": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "da": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "tr": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "nl": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "pl": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "ro": {
+            "count": 1,
+            "percentage": 0.1
+          }
+        },
+        "total": 1000,
+        "most_common": "en"
+      },
+      "length_stats": {
+        "hypothesis_avg": 9.1,
+        "hypothesis_std": 3.0,
+        "reference_avg": 11.9,
+        "reference_std": 3.8,
+        "length_ratio": 0.766
+      }
+    },
+    {
+      "experiment": "direct_de",
+      "language": "de",
+      "num_samples": 1000,
+      "bleu": {
+        "score": 1.11,
+        "bp": 0.7895,
+        "precisions": [
+          22.13,
+          2.38,
+          0.51,
+          0.15
+        ]
+      },
+      "chrf": {
+        "score": 16.67
+      },
+      "meteor": {
+        "score": 12.01,
+        "std": 9.56,
+        "min": 0.0,
+        "max": 62.82
+      },
+      "bertscore": {
+        "precision": 76.03,
+        "recall": 72.94,
+        "f1": 74.4,
+        "model": "bert-base-multilingual-cased"
+      },
+      "language_detection": {
+        "distribution": {
+          "de": {
+            "count": 637,
+            "percentage": 63.7
+          },
+          "en": {
+            "count": 344,
+            "percentage": 34.4
+          },
+          "nl": {
+            "count": 3,
+            "percentage": 0.3
+          },
+          "it": {
+            "count": 3,
+            "percentage": 0.3
+          },
+          "ro": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "id": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "ca": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "sv": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "no": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "tl": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "lv": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "es": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "cy": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "hu": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "tr": {
+            "count": 1,
+            "percentage": 0.1
+          }
+        },
+        "total": 1000,
+        "most_common": "de"
+      },
+      "length_stats": {
+        "hypothesis_avg": 8.6,
+        "hypothesis_std": 3.1,
+        "reference_avg": 10.9,
+        "reference_std": 3.8,
+        "length_ratio": 0.792
+      }
+    },
+    {
+      "experiment": "direct_fr",
+      "language": "fr",
+      "num_samples": 1000,
+      "bleu": {
+        "score": 2.25,
+        "bp": 0.6418,
+        "precisions": [
+          30.26,
+          6.16,
+          1.44,
+          0.57
+        ]
+      },
+      "chrf": {
+        "score": 16.62
+      },
+      "meteor": {
+        "score": 15.76,
+        "std": 11.39,
+        "min": 0.0,
+        "max": 72.7
+      },
+      "bertscore": {
+        "precision": 77.53,
+        "recall": 73.31,
+        "f1": 75.3,
+        "model": "bert-base-multilingual-cased"
+      },
+      "language_detection": {
+        "distribution": {
+          "fr": {
+            "count": 828,
+            "percentage": 82.8
+          },
+          "en": {
+            "count": 136,
+            "percentage": 13.6
+          },
+          "es": {
+            "count": 5,
+            "percentage": 0.5
+          },
+          "sv": {
+            "count": 5,
+            "percentage": 0.5
+          },
+          "no": {
+            "count": 4,
+            "percentage": 0.4
+          },
+          "nl": {
+            "count": 4,
+            "percentage": 0.4
+          },
+          "af": {
+            "count": 3,
+            "percentage": 0.3
+          },
+          "da": {
+            "count": 3,
+            "percentage": 0.3
+          },
+          "it": {
+            "count": 3,
+            "percentage": 0.3
+          },
+          "ca": {
+            "count": 3,
+            "percentage": 0.3
+          },
+          "sw": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "id": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "pt": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "sk": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "de": {
+            "count": 1,
+            "percentage": 0.1
+          }
+        },
+        "total": 1000,
+        "most_common": "fr"
+      },
+      "length_stats": {
+        "hypothesis_avg": 8.3,
+        "hypothesis_std": 3.9,
+        "reference_avg": 12.4,
+        "reference_std": 4.2,
+        "length_ratio": 0.668
+      }
+    },
+    {
+      "experiment": "translate_de",
+      "language": "de",
+      "num_samples": 1000,
+      "bleu": {
+        "score": 3.95,
+        "bp": 0.8581,
+        "precisions": [
+          35.46,
+          7.67,
+          2.25,
+          0.73
+        ]
+      },
+      "chrf": {
+        "score": 25.39
+      },
+      "meteor": {
+        "score": 23.09,
+        "std": 14.51,
+        "min": 0.0,
+        "max": 94.86
+      },
+      "bertscore": {
+        "precision": 77.27,
+        "recall": 74.8,
+        "f1": 75.97,
+        "model": "bert-base-multilingual-cased"
+      },
+      "language_detection": {
+        "distribution": {
+          "de": {
+            "count": 998,
+            "percentage": 99.8
+          },
+          "en": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "sv": {
+            "count": 1,
+            "percentage": 0.1
+          }
+        },
+        "total": 1000,
+        "most_common": "de"
+      },
+      "length_stats": {
+        "hypothesis_avg": 8.8,
+        "hypothesis_std": 2.9,
+        "reference_avg": 10.9,
+        "reference_std": 3.8,
+        "length_ratio": 0.81
+      }
+    },
+    {
+      "experiment": "translate_fr",
+      "language": "fr",
+      "num_samples": 1000,
+      "bleu": {
+        "score": 5.67,
+        "bp": 0.7488,
+        "precisions": [
+          38.2,
+          11.8,
+          4.25,
+          1.71
+        ]
+      },
+      "chrf": {
+        "score": 24.97
+      },
+      "meteor": {
+        "score": 24.47,
+        "std": 15.57,
+        "min": 0.0,
+        "max": 90.73
+      },
+      "bertscore": {
+        "precision": 79.94,
+        "recall": 76.78,
+        "f1": 78.28,
+        "model": "bert-base-multilingual-cased"
+      },
+      "language_detection": {
+        "distribution": {
+          "fr": {
+            "count": 988,
+            "percentage": 98.8
+          },
+          "sv": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "en": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "cy": {
+            "count": 2,
+            "percentage": 0.2
+          },
+          "it": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "tl": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "tr": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "da": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "id": {
+            "count": 1,
+            "percentage": 0.1
+          },
+          "no": {
+            "count": 1,
+            "percentage": 0.1
+          }
+        },
+        "total": 1000,
+        "most_common": "fr"
+      },
+      "length_stats": {
+        "hypothesis_avg": 9.4,
+        "hypothesis_std": 3.0,
+        "reference_avg": 12.4,
+        "reference_std": 4.2,
+        "length_ratio": 0.765
+      }
+    }
+  ]
+}
